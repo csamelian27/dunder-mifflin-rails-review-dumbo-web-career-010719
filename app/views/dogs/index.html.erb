@@ -1,0 +1,8 @@
+<%# For our index page for Dogs, a user should be able to click on a specific dog and take them to the corresponding show page. %>
+
+<h1>Dogs:</h1>
+<ul>
+<% @sorted.each do |dog| %>
+  <li><%= link_to dog.name, dog_path(dog) %> - <%= pluralize(dog.employee_count, 'Employee') %><br></li>
+<% end %>
+</ul>

@@ -1,0 +1,17 @@
+<%# The Employee show page should list all of their attributes (and as a bonus, try to get their picture to show up!) %>
+
+<h1><%= @employee.to_s %></h1>
+
+<%= image_tag @employee.img_url %>
+
+<ul>
+  <li>Alias: <%= @employee.alias %></li>
+  <li>Title: <%= @employee.title %></li>
+  <li>Office: <%= @employee.office %></li>
+  <li>Dog: <%= link_to @employee.dog.name, dog_path(@employee.dog) %></li>
+
+</ul>
+
+<%= button_to "Edit", edit_employee_path(@employee), method: :get %>
+<%= button_to "Delete", employee_path(@employee), method: :delete %>
+<%= link_to "Delete", @employee, method: :delete, data: {confirm: "You Sure?"} %>

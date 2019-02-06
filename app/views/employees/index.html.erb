@@ -1,0 +1,10 @@
+<%# For our index page for Employees, a user should be able to click on a specific Employee and take them to their corresponding show page. %>
+
+<h1>Employees:</h1>
+<ul>
+<% @employees.each do |e| %>
+  <li><%= link_to e.to_s, employee_path(e) %></li>
+<% end %>
+</ul>
+
+<%= button_to "Create New Employee", new_employee_path, method: :get %>
